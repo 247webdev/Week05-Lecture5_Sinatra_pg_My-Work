@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sinatra PG - SQL DB with Ruby</title>
+</head>
+<body>
+  <h1>Edit an author</h1>
+
+  <div class="container">
+    <form action="/authors/<%= @author["id"] %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <p>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" value="<%= @author["name"] %>" autofocus> <!-- Name is description used by server. ID is used by styleing. -->
+        <input type="submit" value="Add">
+      </p>
+    </form>
+    <form action="/authors/<%= @author["id"] %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
+
+</body>
+</html>

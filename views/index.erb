@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sinatra PG - SQL DB with Ruby</title>
+</head>
+<body>
+  <h1>Authors</h1>
+
+  <div class="container">
+    <% @authors.each do |author| %>
+      <h3>
+        <%= author["name"] %>
+      <span>
+        <a href="/authors/<%= author["id"] %>">Show more info</a>
+      </span>
+      <span>
+        <a href="/authors/<%= author["id"] %>/edit">Edit</a>
+      </span>
+      </h3><!-- pry sends the data as string so, all symbols are strings, numbers are strings. U can find out for sure with binding.pry and doing result.each {|row| p row} in terminal -->
+    <% end %>
+  </div>
+
+</body>
+</html>
